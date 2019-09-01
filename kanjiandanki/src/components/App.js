@@ -26,3 +26,19 @@ class App extends Component {
 }
 
 export default App;
+
+
+/*
+this is  similiar to what i need to sum up kanji and count. 
+   const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    console.log("exercise 8");
+    var count = data.reduce(tallyUpElements, {})
+    function tallyUpElements (obj, word){
+      if(!obj[word]){
+        obj[word] = 0;
+      }
+      obj[word] ++;
+      return obj;
+    }
+    console.log(count);
+*/
