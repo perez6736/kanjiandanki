@@ -8,6 +8,10 @@ class KanjiInput extends React.Component {
         });
     };
 
+    onClick = () => {
+        
+    }
+
     render() {
         return(
             <form>
