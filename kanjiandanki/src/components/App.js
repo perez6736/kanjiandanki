@@ -11,6 +11,7 @@ class App extends Component {
 
     //lets create a function that checks if a kanji character exists in the japaneseText state
     isKanji = ch => {
+        console.log("iskanji being called");
         return (ch >= "\u4e00" && ch <= "\u9faf") || (ch >= "\u3400" && ch <= "\u4dbf") || ch === "𠮟";
     }
 
@@ -24,27 +25,28 @@ class App extends Component {
 
     createDictionaryOfCountedKanji = arrayOfText => {
         let count = arrayOfText.reduce(this.tallyUpElements, {})
+        return count; 
     }
-
+    // i need to bind some functions and do some of that magic. 
     CreateKanjiOnlyArray = arrayOfText => {
+        console.log("CreateKanjiOnlyArray function is called")
+        let KanjiArray = [];
         for(let i=0; i<arrayOfText.length; i++){
             if(this.isKanji){
                 //put it in a new array so we can start using that. 
-                japaneseTextOnlyKanji.push(i); 
+                KanjiArray.push(i); 
             }
         }
+        console.log(KanjiArray);
+        this.setState({japaneseTextOnlyKanji: KanjiArray})
     }
 
     render() {
         return (
             <div>
                 <KanjiInput
-                    japaneseText = {this.state.japaneseText}
-                    isKanji = {this.isKanji}
-                    tallyUpElements = {this.tallyUpElements}
-                    createDictionaryOfCountedKanji = {this.createDictionaryOfCountedKanji}
                     CreateKanjiOnlyArray = {this.CreateKanjiOnlyArray}
-                    japaneseTextOnlyKanji = {this.japaneseTextOnlyKanji}
+                    isKanji = {this.isKanji}
                 />
             </div> 
         );

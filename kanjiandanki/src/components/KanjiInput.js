@@ -8,10 +8,6 @@ class KanjiInput extends React.Component {
         });
     };
 
-    onClick = () => {
-        
-    }
-
     render() {
         return(
             <form>
@@ -22,7 +18,7 @@ class KanjiInput extends React.Component {
                 />
                 <button 
                 type="button"
-                //onClick={ this.click }
+                onClick={ this.props.CreateKanjiOnlyArray }
                 >
                     Find most common Kanji 
                 </button>
