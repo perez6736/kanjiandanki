@@ -1,6 +1,10 @@
 import React from 'react';
 
-class KanjiInput extends React.Component {
+export class KanjiInput extends React.Component {
+    constructor(props) {
+        super();
+        this.japaneseText = props.japaneseText;
+    }
 
     change = e => {
         this.setState({
@@ -10,7 +14,11 @@ class KanjiInput extends React.Component {
 
     onClick = () => {
         //this blows up when japaneseText is empty
-        this.props.CreateKanjiOnlyArray(this.state.japaneseText)
+        console.log("click");
+        console.log(this.props.japaneseText);
+        if(this.props.japaneseText != null || "") {
+            this.props.CreateKanjiOnlyArra(this.props.japaneseText)
+        }
 
     }
 

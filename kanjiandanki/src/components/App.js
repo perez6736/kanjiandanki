@@ -11,6 +11,7 @@ class App extends Component {
 
     //lets create a function that checks if a kanji character exists in the japaneseText state
     isKanji = ch => {
+        console.log("iskanji method called");
         return (ch >= "\u4e00" && ch <= "\u9faf") || (ch >= "\u3400" && ch <= "\u4dbf") || ch === "𠮟";
     }
 
@@ -29,7 +30,7 @@ class App extends Component {
 
     CreateKanjiOnlyArray = arrayOfText => {
         let KanjiArray = [];
-
+        console.log("createkanji method called");
         for(let i=0; i<arrayOfText.length; i++){
             if(this.isKanji(arrayOfText[i])){
                 console.log("true this should be two")
