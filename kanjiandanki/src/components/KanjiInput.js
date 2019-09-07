@@ -8,17 +8,23 @@ class KanjiInput extends React.Component {
         });
     };
 
+    onClick = () => {
+        //this blows up when japaneseText is empty
+        this.props.CreateKanjiOnlyArray(this.state.japaneseText)
+
+    }
+
     render() {
         return(
             <form>
                 <textarea 
-                name="japneseText"
+                name="japaneseText"
                 placeholder='Japanese text' 
                 onChange={e => this.change(e)}
                 />
                 <button 
                 type="button"
-                onClick={ this.props.CreateKanjiOnlyArray }
+                    onClick={ this.onClick }
                 >
                     Find most common Kanji 
                 </button>
